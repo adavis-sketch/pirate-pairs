@@ -38,6 +38,10 @@ public class Deck {
         return card;
     }
 
+    public boolean isEmpty(){
+        return length == 0;
+    }
+
     /*
        public static void removeTopCard(){
         int[] newDeck = new int[deck.length - 1];

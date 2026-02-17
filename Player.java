@@ -4,10 +4,9 @@ public class Player{
     private int playerScore = 0;
     private boolean out = false;
 
-    public void takeCard (int card){
-        if (out){
-            return;
-        }
+    public void takeCard(int card){
+        if (out) return;
+
         for (int i = 0; i < handSize; i++){
             if (hand[i] == card){
                 playerScore += card;
@@ -16,7 +15,6 @@ public class Player{
                 return;
             }
         }
-
         hand[handSize] = card;
         handSize++;
     }
@@ -31,15 +29,6 @@ public class Player{
 
     public void eliminate(){
         out = true;
-        System.out.println("PLayer has been eliminated");
+        System.out.println("Player eliminated");
     }
-
-
-
-
-
-
-
-    // add a take card function for players
-    // make a player array for all the players
 }

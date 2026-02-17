@@ -15,8 +15,6 @@ public class Deck {
         }
     }
 
-
-
     public void shuffle(){
         for (int i = length - 1; i > 0; i--){
             int ran = random.nextInt(i + 1);//this random is different but when I searched the shuffle method this was what it showed
@@ -39,12 +37,7 @@ public class Deck {
     public boolean isEmpty(){
         return length == 0;
     }
-
-
 }
- 
-    // use fisher-yates algorithm for shuffle
-    // pull last card instead so don't have to make a new array
 
     
 

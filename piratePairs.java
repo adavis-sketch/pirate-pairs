@@ -5,6 +5,7 @@ public class piratePairs {
         deck.shuffle();
 
         int scoreLimit = 60 / (5 + 1);
+        int turn = 1;
 
         Player[] players = new Player[5];
         for (int i = 0; i < 5; i++){
@@ -12,6 +13,7 @@ public class piratePairs {
         }
 
         while (!deck.isEmpty() && playersLeft(players) > 1){
+            System.out.println("\n--- Turn " + turn + " ---");
             for (int i = 0; i < players.length; i++){
                 Player p = players[i];
                 if (p.isOut()) continue;
@@ -22,10 +24,12 @@ public class piratePairs {
                 }
                 System.out.println("Player " + (i + 1) + " drew " + card);
                 p.takeCard(card);
+                System.out.println("Player " + (i + 1) + " score: " + p.getScore());
                 if (p.getScore() > scoreLimit){
                     p.eliminate();
                 }
             }
+            turn++;
             
         }
         System.out.println("Game over");

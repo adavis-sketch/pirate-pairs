@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Deck {
     private static int[] deck = new int[55];
-    private int length = deck.length;
+    private int length = 55;
     private Random random = new Random();
 
     public Deck(){
@@ -18,8 +18,8 @@ public class Deck {
 
 
     public void shuffle(){
-        for (i = length - 1; i > 0; i--){
-            int ran = random.nextInt(i + 1);//this random is different but when I searched the shuffle method this was what popped up
+        for (int i = length - 1; i > 0; i--){
+            int ran = random.nextInt(i + 1);//this random is different but when I searched the shuffle method this was what it showed
             int temp = deck[i];
             deck[i] = deck[ran];
             deck[ran] = deck[i];
@@ -28,12 +28,10 @@ public class Deck {
     }
 
     public int drawCard(){
-        boolean isCards = true;
         if (length == 0){
-            isCards = false;
-            return isCards;
+            return -1;
         }
-        int card = deck(length - 1);
+        int card = deck[length - 1];
         length--;
         return card;
     }
@@ -42,18 +40,11 @@ public class Deck {
         return length == 0;
     }
 
-    /*
-       public static void removeTopCard(){
-        int[] newDeck = new int[deck.length - 1];
-        for (int i = 1; i < deck.length; i++){
-            newDeck[i - 1] = deck[i];
-        }
-        deck = newDeck;
-    }
-     */
+
+}
  
     // use fisher-yates algorithm for shuffle
     // pull last card instead so don't have to make a new array
 
     
-}
+

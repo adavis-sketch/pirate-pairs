@@ -8,10 +8,11 @@ public class Player{
         if (out){
             return;
         }
-        for (int i = 0; i < handSize){
+        for (int i = 0; i < handSize; i++){
             if (hand[i] == card){
                 playerScore += card;
                 handSize = 0;
+                System.out.println("Pair! Gained " + card + " points. Score = " + score);
                 return;
             }
         }
@@ -30,6 +31,7 @@ public class Player{
 
     public void eliminate(){
         out = true;
+        System.out.println("PLayer eliminated");
     }
 
 

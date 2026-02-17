@@ -22,7 +22,7 @@ public class Deck {
             int ran = random.nextInt(i + 1);//this random is different but when I searched the shuffle method this was what it showed
             int temp = deck[i];
             deck[i] = deck[ran];
-            deck[ran] = deck[i];
+            deck[ran] = temp;
 
         }
     }

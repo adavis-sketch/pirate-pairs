@@ -16,16 +16,19 @@ public class piratePairs {
                 Player p = players[i];
                 if (p.isOut()) continue;
                 int card = deck.drawCard();
+                System.out.println("Player " + i + " drew " + card);
+                p.takeCard(card);
                 if (card == -1){
                     break;
                 }
-                System.out.println("Player " + i + " drew " + card);
                 if (p.getScore() > scoreLimit){
                     p.eliminate();
                 }
             }
+            
         }
         System.out.println("Game over");
+        
 
 
 

@@ -1,5 +1,5 @@
 public class Player{
-    private int[] hand = new int[0];
+    private int[] hand = new int[10];
     private int handSize = 0;
     private int playerScore = 0;
     private boolean out = false;
@@ -12,7 +12,7 @@ public class Player{
             if (hand[i] == card){
                 playerScore += card;
                 handSize = 0;
-                System.out.println("Pair! Gained " + card + " points. Score = " + score);
+                System.out.println("Pair! Gained " + card + " points. Score = " + playerScore);
                 return;
             }
         }
@@ -31,7 +31,7 @@ public class Player{
 
     public void eliminate(){
         out = true;
-        System.out.println("PLayer eliminated");
+        System.out.println("PLayer has been eliminated");
     }
 
 
